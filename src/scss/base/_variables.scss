@@ -1,13 +1,31 @@
-$fuentePrincipal: 'Montserrat', sans-serif;
+$fuentePrincipal: "Inter", sans-serif;
 
 // Colores
 $black: #111111;
 $white: #f9f9f9;
+// Dark blue
+$darkBlue-100: #609ed4;
+$darkBlue-200: #356ea9;
+$darkBlue-300: #0a3871;
+$darkBlue-400: #072b61;
+$darkBlue-500: #052051;
+// Light blue
+$lightBlue-100: #f3f5fc;
+$lightBlue-200: #eff1fa;
+$lightBlue-300: #e9ecf8;
+$lightBlue-400: #aab2d5;
+$lightBlue-500: #757fb2;
+// Gray
+$gray-100: #ced4da;
+$gray-200: #adb5bd;
+$gray-300: #868e96;
+$gray-400: #495057;
+$gray-500: #343a40;
 
 // MediaQueries
-$phone: 480px;
+$phone: 375px;
 $tablet: 768px;
-$desktop: 1200px;
+$desktop: 1440px;
 
 @mixin tablet {
     @media (min-width: $tablet) {
@@ -20,4 +38,3 @@ $desktop: 1200px;
         @content;
     }
 }
-
