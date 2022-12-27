@@ -30,7 +30,7 @@ body {
         width: 90%;
         margin: 0 auto;
         display: grid;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 1fr 100%;
         @include desktop {
             width: 95%;
             display: grid;
@@ -51,10 +51,13 @@ body {
                 @include tablet {
                     padding: 6rem 0 0;
                 }
+                @include desktop {
+                    padding: 2rem 0 0;
+                }
             }
 
-            & .hero {
-                margin-top: 5rem;
+            & .input {
+                margin-top: 6rem;
                 @include tablet {
                     margin-top: 10rem;
                 }
@@ -65,23 +68,42 @@ body {
                     text-decoration: underline;
                     color: var(--darkBlue-300);
                 }
-                & textarea {
-                    color: var(--darkBlue-300);
-                    width: 100%;
-                    height: 30rem;
-                    font-size: 3.2rem;
-                    background-color: var(--lightBlue-100);
-                    border: none;
-                    resize: none;
-                    &::placeholder {
-                        color: var(--darkBlue-300);
-                        text-decoration: underline;
-                    }
-                    &:focus {
-                        outline: none;
-                    }
+                &__wrap {
+                    display: flex;
+                    align-items: flex-start;
                     @include desktop {
-                        height: 50rem;
+                        column-gap: 1rem;
+                    }
+                    & .textarea {
+                        color: var(--darkBlue-300);
+                        height: 30rem;
+                        font-size: 3.2rem;
+                        background-color: var(--lightBlue-100);
+                        border: none;
+                        resize: none;
+                        &::placeholder {
+                            color: var(--darkBlue-300);
+                            text-decoration: underline;
+                        }
+                        &:focus {
+                            outline: none;
+                        }
+                        @include desktop {
+                            height: 57vh;
+                        }
+                    }
+                    & svg {
+                        margin-top: 0.9rem;
+                        width: 3rem;
+                        & path {
+                            fill: var(--darkBlue-300);
+                        }
+                        &:hover {
+                            cursor: pointer;
+                            & path {
+                                fill: #ff8787;
+                            }
+                        }
                     }
                 }
                 // background-color: $darkBlue-200;
@@ -103,16 +125,23 @@ body {
                 & .encript__buttons {
                     display: flex;
                     flex-direction: column;
-                    row-gap: 1rem;
+                    row-gap: 2rem;
                     @include tablet {
                         flex-direction: row;
                         column-gap: 1rem;
                     }
                     & .boton {
-                        padding: 2rem 2rem;
+                        padding: 2.4rem;
                         border-radius: 2.4rem;
+                        text-decoration: underline;
+                        font-size: 1.6rem;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+
                         @include tablet {
                             width: 100%;
+                            text-decoration: none;
                         }
                         &.encriptar {
                             background-color: var(--darkBlue-300);
@@ -128,15 +157,20 @@ body {
             }
         }
     }
-    & .resultado {
-        margin-top: 4rem;
+    & .contenedor-msj {
+        position: relative;
+        height: max-content;
+        margin-top: 6.4rem;
         background-color: $white;
-        padding: 3rem 3rem 2rem;
+        padding: 3.2rem;
         border-radius: 3.2rem;
         box-shadow: 0 2px 3rem rgba(0, 0, 0, 0.25);
         text-align: center;
-        text-decoration: underline;
+        & .img {
+            display: none;
+        }
         & h2 {
+            text-decoration: underline;
             font-size: 2.4rem;
             font-weight: bold;
             color: var(--gray-500);
@@ -144,21 +178,122 @@ body {
         & p {
             font-size: 1.6rem;
             color: var(--gray-400);
+            text-decoration: underline;
+        }
+        & #resultado {
+            background-color: $white;
+            margin: 0;
+            font-size: 2.4rem;
+            text-decoration: none;
+            height: 100%;
+            &:focus {
+                outline: none;
+            }
+        }
+        & .copiar {
+            margin-top: 3.2rem;
+            color: $darkBlue-300;
+            padding: 2.4rem;
+            width: 100%;
+            border-radius: 2.4rem;
+            border: 1px solid $darkBlue-300;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        @include tablet {
+            text-decoration: none;
         }
         @include desktop {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             height: 90vh;
             width: 40rem;
             justify-self: end;
+            margin-top: 2rem;
+            & .img {
+                display: block;
+            }
+            & h2 {
+                margin-top: 2rem;
+            }
         }
     }
     footer {
+        margin-top: 2rem;
         text-align: center;
         & p {
             color: var(--darkBlue-300);
+            margin: 1rem 0;
+        }
+        & a {
+            color: var(--darkBlue-300);
+            font-weight: 700;
+        }
+        @include desktop {
+            margin-top: 0;
         }
     }
+}
+textarea {
+    width: 100%;
+    border: none;
+    resize: none;
 }
 
 body::after {
     content: var(--content);
+}
+
+// Mover la alerta por encima del documento de abajo hacia arriba
+#copiar-alerta {
+    font-size: 1.2rem;
+    position: absolute;
+    z-index: 100;
+    margin: 0;
+    width: max-content;
+    user-select: none;
+    bottom: 11rem;
+    left: calc(50% - 5rem);
+    color: #36b167;
+    background: #d4ffe5;
+    padding: 1rem;
+    text-decoration: none;
+    border-radius: 1rem;
+    animation: copiar-alerta 2s ease-in-out;
+}
+
+// Animacion de la alerta
+@keyframes copiar-alerta {
+    0% {
+        opacity: 0;
+        transform: translateY(1rem);
+    }
+    10% {
+        opacity: 1;
+        transform: translateY(0rem);
+    }
+    90% {
+        opacity: 1;
+        transform: translateY(0rem);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(1rem);
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #666;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background: #ddd;
+    border-radius: 20px;
 }
