@@ -43,10 +43,20 @@ body {
                 padding: 2rem 0 0;
                 display: flex;
                 justify-content: space-between;
+                align-items: center;
                 & svg {
                     & path {
                         fill: var(--darkBlue-300);
                     }
+                }
+                & #dark-mode {
+                    display: none;
+                }
+                & #dark-mode-label {
+                    cursor: pointer;
+                }
+                .moon {
+                    display: none;
                 }
                 @include tablet {
                     padding: 6rem 0 0;

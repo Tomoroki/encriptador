@@ -24,15 +24,21 @@
         </svg>
 
         <input type="checkbox" name="toggle" id="dark-mode">
+        <label for="dark-mode" id="dark-mode-label">
+          <box-icon class="sun" type='solid' name='sun' color="var(--darkBlue-300)" size="lg"></box-icon>
+          <box-icon class="moon" type='solid' name='moon' color="var(--darkBlue-300)" size="lg"></box-icon>
+        </label>
       </header>
 
       <div class="input">
         <div class="input__wrap">
-          <textarea class="textarea" name="frase" placeholder="Ingrese texto aquí"></textarea>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-            <path
-              d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
-          </svg>
+          <textarea id="borrar" class="textarea" name="frase" placeholder="Ingrese texto aquí"></textarea>
+          <label for="borrar">
+            <svg class="borrar-texto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path
+                d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+            </svg>
+          </label>
         </div>
         <div class="input__buttons">
           <div class="alerta">
