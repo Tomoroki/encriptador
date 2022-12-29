@@ -1,28 +1,4 @@
 import "boxicons";
-/* ¡Bienvenidos y Bienvenidas a nuestro primer desafío!
-
-Durante estas cuatro semanas, vamos a trabajar en una aplicación que encripta textos, así podrás intercambiar mensajes secretos con otras personas que sepan el secreto de la encriptación utilizada.
-
-Las "llaves" de encriptación que utilizaremos son las siguientes:
-
-La letra "e" es convertida para "enter"
-La letra "i" es convertida para "imes"
-La letra "a" es convertida para "ai"
-La letra "o" es convertida para "ober"
-La letra "u" es convertida para "ufat"
-
-Requisitos:
-- Debe funcionar solo con letras minúsculas
-- No deben ser utilizados letras con acentos ni caracteres especiales
-- Debe ser posible convertir una palabra para la versión encriptada también devolver una palabra encriptada para su versión original.
-
-Por ejemplo:
-"gato" => "gaitober"
-gaitober" => "gato"
-
-La página debe tener campos para
-inserción del texto que será encriptado o desencriptado, y el usuario debe poder escoger entre as dos opciones.
-El resultado debe ser mostrado en la pantalla. */
 
 // Variables
 const btnToggle = document.querySelector("#dark-mode");
@@ -42,7 +18,6 @@ btnToggle.addEventListener("change", function () {
         iconoSol.style.display = "none";
         iconoLuna.style.display = "block";
     } else {
-        // document.documentElement.setAttribute("data-theme", "light");
         document.documentElement.removeAttribute("data-theme");
         iconoSol.style.display = "block";
         iconoLuna.style.display = "none";
@@ -70,7 +45,6 @@ function validar(frase) {
     const regex = /^[a-z\s]+$/;
     if (!regex.test(frase)) {
         // Mostramos un mensaje de error
-        // alert("Por favor, escriba únicamente frases en letra minúscula sin tildes ni caracteres especiales");
         crearModal("Parece que su mensaje está vacío o contiene mayúsculas o acentos. Por favor, evítelos.");
         return false;
     }
@@ -192,8 +166,7 @@ function alertaTextoCopiado(frase) {
 function crecerResultadoTextArea() {
     const resultado = document.getElementById("resultado");
     console.log(resultado.scrollHeight);
-    // Poner un maximo de 500px
-    // Este if solo debe de funcionar si el viewport es menor a 768px
+    // Poner un maximo de 300px
     if (resultado.scrollHeight > 300 && window.innerWidth < 1440) {
         resultado.style.height = "300px";
     } else {

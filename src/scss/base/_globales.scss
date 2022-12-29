@@ -3,7 +3,9 @@ html {
     box-sizing: border-box;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: inherit;
 }
 
@@ -23,23 +25,15 @@ body {
     font-size: 1.8rem;
 }
 
-p {
-    font-size: 2rem;
-    color: $black;
-}
-
-.container {
-    max-width: 120rem;
-    width: 95%;
-    margin: 0 auto;
-}
 a {
     text-decoration: none;
 }
 img {
     max-width: 100%;
 }
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     margin: 0;
 }
 h1 {
