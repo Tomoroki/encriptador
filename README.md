@@ -22,11 +22,14 @@ Vamos a trabajar en una aplicación que encripta textos, así podrás intercambi
 
 Las "llaves" de encriptación son las siguientes:
 
-La letra "e" es convertida para "enter"
-La letra "i" es convertida para "imes"
-La letra "a" es convertida para "ai"
-La letra "o" es convertida para "ober"
-La letra "u" es convertida para "ufat"
+| Letra   | Conversión   |
+|---------|--------------|
+| e       | enter        |
+| i       | imes         |
+| a       | ai           |
+| o       | ober         |
+| u       | ufat         |
+
 
 Requisitos:
 
@@ -35,8 +38,12 @@ Requisitos:
 -   Debe ser posible convertir una palabra para la versión encriptada también devolver una palabra encriptada para su versión original.
 
 Por ejemplo:
-"gato" => "gaitober"
-gaitober" => "gato"
+| Palabra | Conversión   |
+|---------|--------------|
+| gato    | gaitober     |
+| gaitober| gato         |
+
+
 
 ### Screenshot
 
