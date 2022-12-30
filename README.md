@@ -40,8 +40,8 @@ gaitober" => "gato"
 
 ### Screenshot
 
-![](./public/screenshot-desktop.png)
-![](./public/screenshot-mobile.png)
+![Desktop](./public/screenshot-desktop.png)
+<img src="./public/screenshot-mobile.png" alt="Título de la imagen" width="375px">
 
 ### Links
 
