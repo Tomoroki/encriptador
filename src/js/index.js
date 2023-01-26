@@ -165,7 +165,6 @@ function alertaTextoCopiado(frase) {
 
 function crecerResultadoTextArea() {
     const resultado = document.getElementById("resultado");
-    console.log(resultado.scrollHeight);
     // Poner un maximo de 300px
     if (resultado.scrollHeight > 300 && window.innerWidth < 1440) {
         resultado.style.height = "300px";
